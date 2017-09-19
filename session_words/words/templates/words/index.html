@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Words</title>
+</head>
+<body>
+    <h1>Add a new word:</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="word">
+        <p>Choose color</p>
+        <input type="radio" name="color" value="red">Red<br>
+        <input type="radio" name="color" value="green">Green<br>
+        <input type="radio" name="color" value="blue">Blue<br>
+        <input type="checkbox" name="big" id="enlarge" value="enlarge">
+        <label for="enlarge">Large Fonts!</label>
+        <input type="submit" value="Add to Session">
+    </form>
+</body>
+</html>
