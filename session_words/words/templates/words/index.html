@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Words</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'words/css/style.css' %}">
 </head>
 <body>
     <h1>Add a new word:</h1>
-    <form action="" method="post">
+    <form action="add/" method="post">
         {% csrf_token %}
         <input type="text" name="word">
         <p>Choose color</p>
@@ -17,5 +19,11 @@
         <label for="enlarge">Large Fonts!</label>
         <input type="submit" value="Add to Session">
     </form>
+    <form action="clear" method="post">
+        <input type="submit" value="Clear">
+    </form>
+    {% for word in words.values %}
+        <p class={{word.1}} id={{word.2}}>{{word.0}}</p>
+    {% endfor %}
 </body>
 </html>
